@@ -69,8 +69,8 @@
          margin-bottom: 10px;
       }
       .technical-data-text{
-         margin-top: 0;
-         margin-bottom: 5px;
+         margin-top: 15px;
+         margin-bottom: 15px;
       }
       .software-images {
          display: flex-start;
@@ -89,25 +89,44 @@
       }
 
       .see-more-btn {
-   text-align: center;
-   margin-top: 20px;
-}
+         text-align: center;
+         margin-top: 20px;
+      }
 
-.see-more-btn button {
-   background-color: #f8cb29f7; /* Color amarillo */
-   color: white;
-   border: none;
-   padding: 10px 20px;
-   font-size: 16px;
-   font-weight: bold;
-   border-radius: 5px;
-   cursor: pointer;
-   transition: background-color 0.3s;
-}
+      .see-more-btn button {
+         background-color: #f8cb29f7; /* Color amarillo */
+         color: white;
+         border: none;
+         padding: 10px 20px;
+         font-size: 16px;
+         font-weight: bold;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+      }
 
-.see-more-btn button:hover {
-   background-color: #e5b223; /* Cambia el color al pasar el ratón */
-}
+      .see-more-btn button:hover {
+         background-color: #e5b223; /* Cambia el color al pasar el ratón */
+      }
+
+      /* Estilos para la sección desplegable */
+      .extra-content {
+         display: none;
+         margin-top: 20px;
+         text-align: center;
+         transition: max-height 0.5s ease-in-out;
+      }
+
+      .extra-content img {
+         width: 100%;
+         margin: 10px;
+      }
+
+      .extra-content p {
+         font-size: 18px;
+         margin-top: 10px;
+      }
+
    </style>
 </head>
 <body>
@@ -160,8 +179,9 @@
                <p>
                   Welcome to the Club Natació Cornellà app. Here you can find all the information related to the club, including competitions, calls, events, results and more. With this app, you will have exclusive access to updated and personalized content, all at your fingertips.
                </p>
-               <p class="technical-data-text">Working hours: +74h</p>
-               <p class="technical-data-text">Software used: </p>
+               <p class="technical-data-text"><strong>Working hours:</strong> +74h</p>
+               <p class="technical-data-text"><strong>My work:</strong> Design and programming of the entire application. The most difficult part of the project is getting the app synchronized with the cloud and the work and dedication involved in creating an application alone. </p>
+               <p class="technical-data-text"><strong>Software used:</strong> </p>
 
                <!-- Aquí está la fila de imágenes -->
                <div class="software-images">
@@ -173,13 +193,60 @@
                   <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
                </div>
                <!-- Botón "See more" -->
-<div class="see-more-btn">
-   <button>See more</button>
-</div>
+               <div class="see-more-btn">
+                  <button id="seeMoreBtn">See more</button>
+               </div>
             </div>
          </div>
+
+         <!-- Contenido extra que se desplegará al hacer clic -->
+         <div class="extra-content" id="extraContent">
+            <img src="images/CNCApp Portfolio.png" alt="Extra Image 1">
+            <img src="images/CNCApp Portfolio2.png" alt="Extra Image 2">
+         </div>
+
       </div>
    </div>
+   <!-- UX content section end -->
+
+   <!-- UX content section start -->
+         <h2 class="cncapp-title">Talkative Adventure</h2>
+         <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
+         <div class="cncapp-container">
+            <div class="cncapp-image">
+               <img src="images/Talkative_Screen1.png" alt="CNCApp Screen 1">
+               <p class="cncapp-byline">By Adrián Martín | November - January, 2022</p>
+            </div>
+            <div class="cncapp-text">
+               <p class="cncapp-extra-text">Welcome to Talkative Adventure!</p>
+               <p>
+                  In this app, children can improve their speech skills while having fun. Here you will find interactive activities designed by specialists, games, challenges and more, all to help in their speech therapy progress. With this app, the little ones will have exclusive access to personalized and updated content, adapted to their developmental needs, all at their fingertips!
+               </p>
+               <p class="technical-data-text"><strong>Working hours:</strong> +35h</p>
+               <p class="technical-data-text"><strong>My work:</strong> Design of the entire UX/UI and Figma prototyping of the application. The most “difficult” part of this project was learning how to handle new software such as Adobe Illustrator or Figma. </p>
+               <p class="technical-data-text"><strong>Software used:</strong> </p>
+
+               <!-- Aquí está la fila de imágenes -->
+               <div class="software-images">
+                  <img src="images/Figma.png" alt="Figma" title="Figma">
+                  <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
+                  <img src="images/Ilustrator.png" alt="Adobe Ilustrator" title="Adobe Ilustrator">
+                  <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
+               </div>
+               <!-- Botón "See more" -->
+               <div class="see-more-btn">
+                  <button id="seeMoreBtn">See more</button>
+               </div>
+            </div>
+         </div>
+
+         <!-- Contenido extra que se desplegará al hacer clic -->
+         <div class="extra-content" id="extraContent">
+            <img src="images/CNCApp Portfolio.png" alt="Extra Image 1">
+            <img src="images/CNCApp Portfolio2.png" alt="Extra Image 2">
+            </div>
+
+      </div>
    <!-- UX content section end -->
 
    <!-- footer section start -->
@@ -219,5 +286,21 @@
    <!-- sidebar -->
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
+
+   <!-- Script para mostrar/ocultar contenido extra -->
+   <script>
+      document.getElementById("seeMoreBtn").addEventListener("click", function() {
+         var extraContent = document.getElementById("extraContent");
+         if (extraContent.style.display === "none" || extraContent.style.display === "") {
+            extraContent.style.display = "block";
+            this.textContent = "See less";
+         } else {
+            extraContent.style.display = "none";
+            this.textContent = "See more";
+         }
+      });
+   </script>
+
 </body>
 </html>
+

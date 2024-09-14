@@ -194,27 +194,22 @@
                </div>
                <!-- Botón "See more" -->
                <div class="see-more-btn">
-                  <button id="seeMoreBtn">See more</button>
+                  <button id="seeMoreBtnCNCApp">See more</button>
                </div>
             </div>
          </div>
 
          <!-- Contenido extra que se desplegará al hacer clic -->
-         <div class="extra-content" id="extraContent">
-            <img src="images/CNCApp Portfolio.png" alt="Extra Image 1">
+         <div class="extra-content" id="extraContentCNCApp">
+            <img src="images/CNCApp Portfolio3.png" alt="Extra Image 1">
             <img src="images/CNCApp Portfolio2.png" alt="Extra Image 2">
          </div>
 
-      </div>
-   </div>
-   <!-- UX content section end -->
-
-   <!-- UX content section start -->
          <h2 class="cncapp-title">Talkative Adventure</h2>
          <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
          <div class="cncapp-container">
             <div class="cncapp-image">
-               <img src="images/Talkative_Screen1.png" alt="CNCApp Screen 1">
+               <img src="images/Talkative_Screen1.png" alt="Talkative Adventure Screen 1">
                <p class="cncapp-byline">By Adrián Martín | November - January, 2022</p>
             </div>
             <div class="cncapp-text">
@@ -230,23 +225,24 @@
                <div class="software-images">
                   <img src="images/Figma.png" alt="Figma" title="Figma">
                   <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
-                  <img src="images/Ilustrator.png" alt="Adobe Ilustrator" title="Adobe Ilustrator">
+                  <img src="images/Ilustrator.png" alt="Adobe Illustrator" title="Adobe Illustrator">
                   <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
                </div>
                <!-- Botón "See more" -->
                <div class="see-more-btn">
-                  <button id="seeMoreBtn">See more</button>
+                  <button id="seeMoreBtnTalkative">See more</button>
                </div>
             </div>
          </div>
 
          <!-- Contenido extra que se desplegará al hacer clic -->
-         <div class="extra-content" id="extraContent">
-            <img src="images/CNCApp Portfolio.png" alt="Extra Image 1">
-            <img src="images/CNCApp Portfolio2.png" alt="Extra Image 2">
-            </div>
+         <div class="extra-content" id="extraContentTalkative">
+            <img src="images/Talkative Adventure Portfolio.png" alt="Extra Image 1">
+            <img src="images/Talkative Adventure Portfolio2.png" alt="Extra Image 2">
+         </div>
 
       </div>
+   </div>
    <!-- UX content section end -->
 
    <!-- footer section start -->
@@ -289,13 +285,24 @@
 
    <!-- Script para mostrar/ocultar contenido extra -->
    <script>
-      document.getElementById("seeMoreBtn").addEventListener("click", function() {
-         var extraContent = document.getElementById("extraContent");
-         if (extraContent.style.display === "none" || extraContent.style.display === "") {
-            extraContent.style.display = "block";
+      document.getElementById("seeMoreBtnCNCApp").addEventListener("click", function() {
+         var extraContentCNCApp = document.getElementById("extraContentCNCApp");
+         if (extraContentCNCApp.style.display === "none" || extraContentCNCApp.style.display === "") {
+            extraContentCNCApp.style.display = "block";
             this.textContent = "See less";
          } else {
-            extraContent.style.display = "none";
+            extraContentCNCApp.style.display = "none";
+            this.textContent = "See more";
+         }
+      });
+
+      document.getElementById("seeMoreBtnTalkative").addEventListener("click", function() {
+         var extraContentTalkative = document.getElementById("extraContentTalkative");
+         if (extraContentTalkative.style.display === "none" || extraContentTalkative.style.display === "") {
+            extraContentTalkative.style.display = "block";
+            this.textContent = "See less";
+         } else {
+            extraContentTalkative.style.display = "none";
             this.textContent = "See more";
          }
       });
@@ -303,4 +310,3 @@
 
 </body>
 </html>
-

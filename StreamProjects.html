@@ -27,6 +27,9 @@
    <!-- font awesome css -->
    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
    <style>
        /* Estilos para el contenedor del video */
        .video-container {
@@ -39,6 +42,14 @@
            background: #000;
            margin-bottom: 20px; /* Espacio debajo del video */
        }
+       .model-row {
+    display: flex; /* Flexbox para alinear en fila */
+    flex-direction: row; /* Asegura que los elementos estén en fila */
+    justify-content: center; /* Centra los visores horizontalmente */
+    gap: 40px; /* Espacio entre los visores */
+    margin-top: 100px; /* Espaciado superior */
+    margin-bottom: 40px; /* Espaciado inferior */
+}
        .video-container video {
            position: absolute;
            top: 0;
@@ -87,9 +98,7 @@
                   <li class="nav-item">
                      <a class="nav-link" href="service.html">Service</a>
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="blog.html">Blog</a>
-                  </li>
+                  
                   <li class="nav-item">
                      <a class="nav-link" href="contact.html">Contact Us</a>
                   </li>
@@ -103,7 +112,7 @@
    <br><br><br><br>
    <div class="col-sm-12">
       <br>   
-      <h1 class="portfolio_taital">STREAM <span class="portfolio_taital_1">PROJECTS</span></h1>
+      <h1 class="portfolio_taital">STREAM <span class="portfolio_taital_1">INTERFACE</span></h1>
    </div>
    </h2>
    <br>
@@ -123,6 +132,16 @@
        <img src="images/Escena_Principal2.0.png" alt="Descripción de la imagen 1">
        <img src="images/Pantalla espera.jpg" alt="Descripción de la imagen 2">
    </div>
+
+   <div class="col-sm-12"> 
+      <h1 class="portfolio_taital">3D <span class="portfolio_taital_1">MODELS</span></h1>
+   </div>
+
+   <div class="model-row">
+      <model-viewer src="images/3D/Trofeo Xbuyer.glb" alt="Modelo 3D 1" auto-rotate camera-controls style="width: 400px; height: 300px;"></model-viewer>
+      <model-viewer src="images/3D/TrofeoCopaKinder.glb" alt="Modelo 3D 2" auto-rotate camera-controls style="width: 400px; height: 300px;"></model-viewer>
+   </div>
+   
 
    <!-- footer section start -->
    <div class="footer_section">

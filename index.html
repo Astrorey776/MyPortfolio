@@ -163,11 +163,15 @@
                   </div>
                </div>
             </section>
-             <div class="container">
-               <div class="video_bt">
-                  <a href="images/AdrianMartinCV.pdf" download class="play_icon">CV</a>
+            <div class="container">
+               <div class="video_bt" style="position: relative;">
+                  <div id="cvOptions" style="display: none; position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); text-align: center;">
+                     <a href="images/AdrianMartinCVEnglish.pdf" download="AdrianMartin_CV_English.pdf" class="btn btn-secondary" style="display: block; margin-bottom: 5px;">CV en Inglés</a>
+                     <a href="images/CV Adrián MartínEspañol.pdf" download="AdrianMartin_CV_Spanish.pdf" class="btn btn-secondary" style="display: block;">CV en Español</a>
+                  </div>
+                  <button class="play_icon" onclick="toggleCVOptions()">CV</button>
                </div>
-            </div> 
+            </div>
          </div>
          <!-- banner section end -->
       </div>
@@ -410,6 +414,13 @@
                 $(this).off("touchmove");
             });
          });
+
+
+         function toggleCVOptions() {
+      const cvOptions = document.getElementById('cvOptions');
+      // Alterna la visibilidad del contenedor con las opciones
+      cvOptions.style.display = cvOptions.style.display === 'none' ? 'block' : 'none';
+   }
       </script>
    </body>
 </html>

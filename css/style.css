@@ -348,31 +348,35 @@ button {
     padding-left: 20px;
 }
 
-.play_icon img {
-    width: 80px;
-}
-
 .play_icon {
-    width: 100%;
-    margin: 0 auto;
+    width: 90px; /* Tamaño del botón */
+    height: 90px;
+    margin: 100 auto;
     position: relative;
     z-index: 5;
+    display: flex;
+    align-items: center; /* Centrar texto verticalmente */
+    justify-content: center; /* Centrar texto horizontalmente */
+    background-color: #f5c729; /* Color de fondo del botón */
+    border-radius: 50%; /* Hacer el botón redondo */
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: rgb(0, 52, 68); /* Color del texto */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3); /* Sombra */
+    cursor: pointer; /* Cursor de dedo */
 }
 
 .play_icon::before {
     content: '';
     position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 90px;
-    height: 90px;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    width: 120px; /* Tamaño del efecto animado */
+    height: 120px;
     transform: translate(-50%, -50%);
-    background-color: #f5c729;
-    border-radius: 100%;
-    animation: fadeEffect 1.3s infinite ease;
-    box-shadow: 0px 0px 10px 0px;
-    right: initial;
-    margin: 0 auto;
+    background-color: rgba(245, 199, 41, 0.5); /* Fondo del efecto animado */
+    border-radius: 50%; /* Hacer redondo */
+    animation: fadeEffect 1.3s infinite ease; /* Animación */
     z-index: -1;
 }
 

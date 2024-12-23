@@ -8,7 +8,7 @@
    <!-- mobile metas -->
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>UX Screen</title>
+   <title>CM Projects</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -27,6 +27,109 @@
    <!-- font awesome css -->
    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
+<style>
+   .cncapp-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px;
+   }
+   .cncapp-title {
+      color: #f8ca29;
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 55px;
+      margin-bottom: 0px;
+      text-align: center;
+   }
+   .cncapp-byline {
+      font-size: 14px;
+      color: #666;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+   }
+   .cncapp-image {
+      width: 40%;
+   }
+   .cncapp-image img {
+      width: 100%;
+      height: auto;
+   }
+   .cncapp-text {
+      width: 55%;
+      padding-left: 20px;
+      margin-top: 0;
+      display: center;
+      align-items: flex-start;
+   }
+   .cncapp-extra-text {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+   }
+   .technical-data-text{
+      margin-top: 15px;
+      margin-bottom: 15px;
+   }
+   .software-images {
+      display: flex-start;
+      justify-content: space-between;
+      text-align: center;
+      gap:0px;
+      margin-top: 0px;
+   }
+   .software-images img {
+      width: 70px; /* Ajusta el tamaño de las imágenes */
+      height: auto;
+      transition: transform 0.3s;
+   }
+   .software-images img:hover {
+      transform: scale(1.1); /* Agranda ligeramente al pasar el ratón */
+   }
+
+   .see-more-btn {
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 30px;
+   }
+
+   .see-more-btn button {
+      background-color: #f8cb29f7; /* Color amarillo */
+      color: white;
+      border: none;
+      padding: 20px 140px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+   }
+
+   .see-more-btn button:hover {
+      background-color: #e5b223; /* Cambia el color al pasar el ratón */
+   }
+
+   /* Estilos para la sección desplegable */
+   .extra-content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      transition: max-height 0.5s ease-in-out;
+   }
+
+   .extra-content img {
+      width: 100%;
+      margin: 10px;
+   }
+
+   .extra-content p {
+      font-size: 18px;
+      margin-top: 10px;
+   }
+
+</style>
 <body>
    <!-- header section start -->
    <div class="header_section">
@@ -63,15 +166,61 @@
    </div>
    <!-- header section end -->
 
-   <!-- UX content section start -->
+   <!-- CM Projects content section start -->
    <div class="ux_content_section layout_padding">
-      <div class="container">
-         <h1 class="portfolio_taital">CMProjects</h1>
-         <p>Contenido de la página CMProjects.</p>
-         <!-- Aquí puedes añadir el contenido específico de UX -->
+      <br>
+      <br><br>
+      <div class="col-sm-12">
+         <h1 class="portfolio_taital">INSTA <span class="portfolio_taital_1">POSTS</span></h1>
+      </div>
+      </h2>
+      <br>
+      <br>
+      <br><br>
+      <br>
+       <!-- Contenedor de 3 filas y 3 columnas de imágenes -->
+       <div class="image-grid">
+         <div class="row">
+            <div class="col">
+               <img src="images/CMProjects.png" alt="Sample Image">
+            </div>
+            <div class="col">
+               <img src="images/PresentacionEntrenadores.jpg" alt="Sample Image">
+            </div>
+            <div class="col">
+               <img src="images/Gema.jpg" alt="Sample Image">
+            </div>
+         </div><br>
+         <br><br>
+         <div class="row">
+            <div class="col">
+               <img src="images/Presentacion club.jpg" alt="Sample Image">
+            </div>
+            <div class="col">
+               <img src="images/Equipación_1.jpg" alt="Sample Image">
+            </div><br>
+            <br><br>
+            <div class="col">
+               <img src="images/Escuela Septiembre5.jpg" alt="Sample Image">
+            </div>
+         </div><br>
+         <br><br>
+         
+         </div>
+         <div class="image-grid2">
+         <div class="row">
+            <div class="col">
+               <img src="images/CartellMaster_Cornella.jpg" alt="Sample Image">
+            </div>
+         </div><br><br></div>
+         <!-- Botón "See more" -->
+         <div class="see-more-btn">
+            <button id="seeMoreBtnCNCApp" onclick="window.open('https://www.instagram.com/cncornella/', '_blank');">See more</button>
+        </div>
+        
       </div>
    </div>
-   <!-- UX content section end -->
+   <!-- CM Projects content section end -->
 
    <!-- footer section start -->
    <div class="footer_section">
@@ -96,7 +245,7 @@
    <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container">
-         <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a></p>
+         <p class="copyright_text">2024 All Rights Reserved. Design by Adrián Martín</p>
       </div>
    </div>
    <!-- copyright section end -->

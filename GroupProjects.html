@@ -26,6 +26,86 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
    <!-- font awesome css -->
    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+   <style>
+      .cncapp-container {
+         display: flex;
+         align-items: flex-start;
+         justify-content: space-between;
+         padding: 20px;
+      }
+      .cncapp-title {
+         color: #f8ca29;
+         font-size: 40px;
+         font-weight: bold;
+         margin-top: 55px;
+         margin-bottom: 0px;
+         text-align: center;
+      }
+      .cncapp-byline {
+         font-size: 14px;
+         color: #666;
+         margin-top: 0;
+         margin-bottom: 20px;
+         text-align: center;
+      }
+      .cncapp-image {
+         width: 40%;
+      }
+      .cncapp-image img {
+         width: 100%;
+         height: auto;
+      }
+      .cncapp-text {
+         width: 55%;
+         padding-left: 20px;
+      }
+      .cncapp-extra-text {
+         text-align: center;
+         font-size: 20px;
+         font-weight: bold;
+         margin-bottom: 10px;
+      }
+      .technical-data-text {
+         margin-top: 15px;
+         margin-bottom: 15px;
+      }
+      .software-images {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         gap: 10px;
+         margin-top: 0px;
+      }
+      .software-images img {
+         width: 70px;
+         height: auto;
+         transition: transform 0.3s;
+      }
+      .software-images img:hover {
+         transform: scale(1.1);
+      }
+      .button-row {
+         display: flex;
+         justify-content: center;
+         gap: 15px;
+         margin-top: 20px;
+      }
+      .button-row button {
+         background-color: #f8cb29f7;
+         color: white;
+         border: none;
+         padding: 10px 20px;
+         font-size: 16px;
+         font-weight: bold;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+      }
+      .button-row button:hover {
+         background-color: #e5b223;
+      }
+
+   </style>
 </head>
 <body>
    <!-- header section start -->
@@ -66,9 +146,110 @@
    <!-- UX content section start -->
    <div class="ux_content_section layout_padding">
       <div class="container">
-         <h1 class="portfolio_taital">GroupProjects</h1>
-         <p>Contenido de la página GroupProjects.</p>
-         <!-- Aquí puedes añadir el contenido específico de UX -->
+         <br>
+         <br>
+         <h1 class="portfolio_taital">GUARDIANS OF THE GALAXY: <span class="portfolio_taital_1">THE BET</span></h1>
+         <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
+         <div class="cncapp-container">
+            <div class="cncapp-image">
+               <img src="images/LogoJuego.png" alt="CNCApp Screen 1">
+               <p class="cncapp-byline">By Red Forest Studios | February, 2023 - June 2023</p>
+            </div>
+            <div class="cncapp-text">
+               <p class="cncapp-extra-text">An amazing top-down shooter based on The Guardians of the Galaxy!</p>
+               <p>
+                  Top-Down Action Shooting game set in the Marvel Universe. Play through completely different worlds with the Guardians of the Galaxy squad and battle against those who threaten the universe with unique weapons. Unlock different types of skills while progressing in the story and create all kinds of weapons to fight the evil.
+               </p>
+               <p class="technical-data-text"><strong>My work:</strong><br> · QA Testing<br>
+                  · Community Manager<br>
+                  · Asset creation<br>
+                  · Recording and editing of trailers<br> </p>
+               <p class="technical-data-text"><strong>Software used:</strong> </p>
+
+               <!-- Aquí está la fila de imágenes -->
+               <div class="software-images">
+                  <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
+                  <img src="images/Visual.png" alt="Visual Studio" title="Visual Studio">
+                  <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
+               </div>
+               <div class="button-row">
+                  <button id="seeMoreBtn" onclick="window.open('https://projectwastelanders.github.io/ProjectWastelanders/index.html', '_blank')">See More</button>
+                  <button id="trailerBtn" onclick="window.open('https://www.youtube.com/watch?v=vrAAI4zPIIY&ab_channel=RedForestStudios', '_blank')">Trailer</button>
+               </div>
+            </div>
+         </div>
+         <br>
+         <br>
+         <div class="container">
+            <br>
+            <br>
+            <h1 class="portfolio_taital">IMPERIAL <span class="portfolio_taital_1">FALL</span></h1>
+            <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
+            <div class="cncapp-container">
+               <div class="cncapp-image">
+                  <img src="images/Imperial Fall.png" alt="CNCApp Screen 1">
+                  <p class="cncapp-byline">By Nautilus Studios | February, 2022 - June 2022</p>
+               </div>
+               <div class="cncapp-text">
+                  <p class="cncapp-extra-text">Medieval RPG: turn-based combat, skill trees, puzzles, and revenge!</p>
+                  <p>
+                     Medieval videogame RPG with Turn-Based-Combat and skills tree, set in the witch hunt period. Enjoy this open world and solve multiple puzzles to revenge the 4 main characters of this epic story.
+                  </p>
+                  <p class="technical-data-text"><strong>My work:</strong><br> · Creation of the map<br>
+                     · Asset creation and design<br>
+                     · Level design<br> </p>
+                  <p class="technical-data-text"><strong>Software used:</strong> </p>
+   
+                  <!-- Aquí está la fila de imágenes -->
+                  <div class="software-images">
+                     <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
+                     <img src="images/Visual.png" alt="Visual Studio" title="Visual Studio">
+                     <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
+                  </div>
+                  <div class="button-row">
+                     <button id="seeMoreBtn" onclick="window.open('https://vozes.github.io/NautilusStudios-ProjectII_RPG/', '_blank')">See More</button>
+                     <button id="trailerBtn" onclick="window.open('https://www.youtube.com/watch?v=ZcurcKaMgCU&ab_channel=Zapper163', '_blank')">Trailer</button>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <br>
+         </div>
+         <div class="container">
+            <br>
+            <br>
+            <h1 class="portfolio_taital">IMPERIAL <span class="portfolio_taital_1">FALL</span></h1>
+            <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
+            <div class="cncapp-container">
+               <div class="cncapp-image">
+                  <img src="images/VR Defense.jpg" alt="CNCApp Screen 1">
+                  <p class="cncapp-byline">By Nautilus Studios | February, 2023 - June 2023</p>
+               </div>
+               <div class="cncapp-text">
+                  <p class="cncapp-extra-text">Tower Defense: build, strategize, and join combat with manual attacks.</p>
+                  <p>
+                     Tower Defense with two phases: construction and combat. In the construction phase, the player is going to be in lookout mode in a tower where he will be able to see the whole playing field to build towers. In the combat phase, the player will have two options: to watch how his strategy is progressing from the watchtower or to teleport to one of the towers built on the map and throw bombs or shoot a crossbow manually.
+                  </p>
+                  <p class="technical-data-text"><strong>My work:</strong><br> · Firing mechanics<br>
+                     · Defence turrets<br>
+                     · Assets<br> </p>
+                  <p class="technical-data-text"><strong>Software used:</strong> </p>
+   
+                  <!-- Aquí está la fila de imágenes -->
+                  <div class="software-images">
+                     <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
+                     <img src="images/Visual.png" alt="Visual Studio" title="Visual Studio">
+                     <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
+                  </div>
+                  <div class="button-row">
+                     <button id="seeMoreBtn" onclick="window.open('https://vozes.github.io/NautilusStudios-ProjectII_RPG/', '_blank')">See More</button>
+                     <button id="trailerBtn" onclick="window.open('https://www.youtube.com/watch?v=ZcurcKaMgCU&ab_channel=Zapper163', '_blank')">Trailer</button>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <br>
+         </div>
       </div>
    </div>
    <!-- UX content section end -->
@@ -96,7 +277,7 @@
    <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container">
-         <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a></p>
+         <p class="copyright_text">2024 All Rights Reserved. Design by Adrián Martín</p>
       </div>
    </div>
    <!-- copyright section end -->

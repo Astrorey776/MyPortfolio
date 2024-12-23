@@ -8,7 +8,7 @@
    <!-- mobile metas -->
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>UX Screen</title>
+   <title>CM Projects</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -26,6 +26,43 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
    <!-- font awesome css -->
    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+   <style>
+       /* Estilos para el contenedor del video */
+       .video-container {
+           position: relative;
+           padding-bottom: 30.25%; /* Relación de aspecto 16:9 */
+           height: 0;
+           overflow: hidden;
+           margin: 0 auto;
+           max-width: 80%;
+           background: #000;
+           margin-bottom: 20px; /* Espacio debajo del video */
+       }
+       .video-container video {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+       }
+       /* Estilos para la fila de imágenes */
+       .image-row {
+           display: flex;
+           flex-direction: row; /* Cambia a fila */
+           justify-content: center; /* Centra las imágenes horizontalmente */
+           gap: 40px; /* Espacio entre las imágenes */
+           margin-bottom: 80px; /* Espacio debajo de la fila de imágenes */
+           margin-top: 60px;
+       }
+       .image-row img {
+           width: auto; /* Ajusta automáticamente */
+           height: 400px; /* Ajusta a una altura uniforme */
+           max-width: 100%; /* Evita que sean más anchas que el contenedor */
+           border-radius: 10px; /* Esquinas redondeadas opcionales */
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+       }
+   </style>
 </head>
 <body>
    <!-- header section start -->
@@ -62,16 +99,30 @@
       </div>
    </div>
    <!-- header section end -->
-
-   <!-- UX content section start -->
-   <div class="ux_content_section layout_padding">
-      <div class="container">
-         <h1 class="portfolio_taital">StreamProjects</h1>
-         <p>Contenido de la página StreamProjects.</p>
-         <!-- Aquí puedes añadir el contenido específico de UX -->
-      </div>
+   <br>
+   <br><br><br><br>
+   <div class="col-sm-12">
+      <br>   
+      <h1 class="portfolio_taital">STREAM <span class="portfolio_taital_1">PROJECTS</span></h1>
    </div>
-   <!-- UX content section end -->
+   </h2>
+   <br>
+   <br>
+   <br><br>
+   <br>
+   <!-- Contenedor del video local -->
+   <div class="video-container">
+      <video controls>
+          <source src="images/VideoVictor.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+      </video>
+   </div>
+
+   <!-- Fila de imágenes -->
+   <div class="image-row">
+       <img src="images/Escena_Principal2.0.png" alt="Descripción de la imagen 1">
+       <img src="images/Pantalla espera.jpg" alt="Descripción de la imagen 2">
+   </div>
 
    <!-- footer section start -->
    <div class="footer_section">
@@ -96,7 +147,7 @@
    <!-- copyright section start -->
    <div class="copyright_section">
       <div class="container">
-         <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a></p>
+         <p class="copyright_text">2024 All Rights Reserved. Design by Adrián Martín</p>
       </div>
    </div>
    <!-- copyright section end -->

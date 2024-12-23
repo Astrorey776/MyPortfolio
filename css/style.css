@@ -518,6 +518,28 @@ button {
     box-shadow: 0px 0px 60px 0px #f0f0ef;
 }
 
+.image-grid img {
+    width: 400px; /* Ancho uniforme */
+    height: 440px; /* Alto uniforme */
+    margin-top: -10px; /* Margen alrededor de cada imagen */
+    object-fit:cover; /* Mantener proporciones recortando si es necesario */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
+    margin-right: 0px; 
+    margin-left: 60px;
+    
+}
+
+.image-grid2 img {
+    width: 800px; /* Ancho uniforme */
+    height: 440px; /* Alto uniforme */
+    margin-top: -10px; /* Margen alrededor de cada imagen */
+    object-fit:cover; /* Mantener proporciones recortando si es necesario */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
+    margin-right: 0px; 
+    margin-left: 430px;
+    
+}
+
 .app_icon {
     width: 100%;
     margin: 0 auto;

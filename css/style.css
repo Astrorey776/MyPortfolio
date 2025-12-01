@@ -193,6 +193,7 @@ img {
 
 .navbar-form input {
     border: none !important;
+    
 }
 
 .badge {
@@ -238,7 +239,7 @@ button {
 }
 
 .header_bg {
-    background: #000;
+    background: #00132b;
 }
 
 .bg-light {
@@ -266,11 +267,12 @@ button {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #f8ca29;
+    color: #FF9008;
 }
 
 .navbar {
     padding: 30px 0px 30px 0px;
+    
 }
 
 
@@ -357,14 +359,96 @@ button {
     display: flex;
     align-items: center; /* Centrar texto verticalmente */
     justify-content: center; /* Centrar texto horizontalmente */
-    background-color: #f5c729; /* Color de fondo del botón */
+    background-color: #FF9008; /* Color de fondo del botón */
     border-radius: 50%; /* Hacer el botón redondo */
     font-size: 24px; /* Tamaño del texto */
     font-weight: bold; /* Texto en negrita */
-    color: rgb(0, 52, 68); /* Color del texto */
+    color: #00132b; /* Color del texto */
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3); /* Sombra */
     cursor: pointer; /* Cursor de dedo */
 }
+
+.cv-options {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom center; /* Sale desde la circunferencia del botón */
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.cv-options.show {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cv-link {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.cv-wrapper {
+    position: relative;
+    width: 90px;   /* igual que el botón CV */
+    height: 90px;
+    margin: 0 auto;
+}
+
+/* Círculos de las orejas */
+.cv-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF9008;   /* mismo naranja que el botón */
+    color: #00132b;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    top: 50%;
+    left: 50%;
+    
+    /* Estado inicial: escondidas en el centro y pequeñas */
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Cuando el wrapper tenga la clase .show las orejas salen hacia arriba */
+.cv-wrapper:hover .cv-left {
+    transform: translate(-120%, -130%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cv-wrapper:hover .cv-right {
+    transform: translate(20%, -130%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* (Opcional) Hover en las orejas */
+.cv-circle:hover {
+    background-color: #f5c729;
+}
+
+.cv-circle {
+    z-index: 10; /* orejas delante */
+}
+
+.play_icon {
+    z-index: 5; /* botón detrás */
+}
+
 
 .play_icon::before {
     content: '';
@@ -374,7 +458,7 @@ button {
     width: 120px; /* Tamaño del efecto animado */
     height: 120px;
     transform: translate(-50%, -50%);
-    background-color: rgba(245, 199, 41, 0.5); /* Fondo del efecto animado */
+    background-color: rgba(245, 197, 41, 0.271);
     border-radius: 50%; /* Hacer redondo */
     animation: fadeEffect 1.3s infinite ease; /* Animación */
     z-index: -1;
@@ -494,14 +578,14 @@ button {
     width: 100%;
     float: left;
     font-size: 40px;
-    color: #f5c729;
+    color: #FF9008;
     font-weight: bold;
 }
 
 .services_text {
     width: 100%;
     font-size: 24px;
-    color: #343534;
+    color: #00132B;
     font-weight: bold;
     padding: 20px 0px 0px 0px;
     text-align: center;
@@ -516,7 +600,7 @@ button {
 .box_main {
     width: 100%;
     border-radius: 100%;
-    border: 6px solid #f5c729;
+    border: 6px solid #FF9008;
     height: auto;
     padding: 70px 0px;
     box-shadow: 0px 0px 60px 0px #f0f0ef;
@@ -540,9 +624,10 @@ button {
     object-fit:cover; /* Mantener proporciones recortando si es necesario */
     border-radius: 5px; /* Esquinas redondeadas opcionales */
     margin-right: 0px; 
-    margin-left: 430px;
+    margin-left: 23%;
     
 }
+
 
 .app_icon {
     width: 100%;
@@ -562,11 +647,11 @@ button {
 }
 
 .box_main:hover .services_text {
-    color: #f5c729;
+    color: #FF9008;
 }
 
 .services_text.active {
-    color: #f5c729;
+    color: #00132B;
 }
 
 .box_main:hover .app_icon_1 {
@@ -598,7 +683,7 @@ button {
 }
 
 .readmore_bt a:hover {
-    background-color: #f5c729;
+    background-color: #FF9008;
     color: #fefefd;
 }
 
@@ -611,20 +696,104 @@ button {
 .portfolio_section {
     width: 100%;
     float: left;
-    padding: 90px 0px;
+    padding: 40px 0px;
 }
 
 .portfolio_taital {
     width: 100%;
     float: left;
     font-size: 40px;
-    color: #f5c729;
+    color: #FF9008;
+    font-weight: bold;
+    text-align: center;
+}
+
+.extra-content .update-details {
+  text-align: left;
+}
+
+.update-details {
+  list-style: none;       /* Quitamos bullets normales */
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.vitto-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px; /* Antes 20px → ahora más compacto */
+   justify-items: center;
+   margin-top: 10px; /* Reduce separación con el contenido superior */
+}
+
+.download-btn {
+   display: inline-block;
+   background-color: #ED962B; /* Azul */
+   color: white;
+   padding: 8px 50px;
+   font-size: 18px;
+   font-weight: bold;
+   border-radius: 8px;
+   text-decoration: none;
+   transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+   background-color: #FF9008; /* Azul más oscuro */
+   color: white;
+}
+
+
+.vitto-grid img {
+   width: 100%;
+   max-width: 90%; /* Ligeramente más pequeño para acercarlas más */
+   height: auto;
+   border-radius: 10px;
+}
+
+
+
+.update-details li {
+  position: relative;
+  padding-left: 22px;     /* espacio para el icono */
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* Icono personalizado (puedes cambiarlo por el que quieras) */
+.update-details li::before {
+  content: "★";           /* O usa "➜", "✔", "★", "▹" */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FF9008;         /* Color del club */
+  font-size: 18px;
+  line-height: 16px;
+}
+
+/* Negrita en primeras palabras */
+.update-details .bold {
+  font-weight: bold;
+}
+
+
+.intro-text {
+  text-align: justify;
+}
+
+.portfolio_subtitle {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #00132B;
     font-weight: bold;
     text-align: center;
 }
 
 .portfolio_taital_1 {
-    color: #292929;
+    color: #00132B;
     border-bottom: 5px solid #363636;
 }
 
@@ -700,7 +869,7 @@ button {
 
 .buy_bt a:hover {
     color: #fefefd;
-    background-color: #f5c729;
+    background-color: #FF9008;
 }
 
 .seemore_bt {
@@ -722,7 +891,7 @@ button {
 }
 
 .seemore_bt a:hover {
-    background-color: #f5c729;
+    background-color: #FF9008;
     color: #fefefd;
 }
 
@@ -745,7 +914,7 @@ button {
     width: 100%;
     float: left;
     font-size: 40px;
-    color: #f5c729;
+    color: #FF9008;
     font-weight: bold;
     text-align: center;
 }
@@ -811,7 +980,7 @@ button {
     text-align: center;
     text-transform: uppercase;
     padding: 14px 0px;
-    background-color: #f5c729;
+    background-color: #FF9008;
 }
 
 .prep_text {
@@ -852,7 +1021,7 @@ button {
 }
 
 .readmore_bt_1 a:hover {
-    background-color: #f5c729;
+    background-color: #FF9008;
     color: #fefefd;
 }
 
@@ -872,7 +1041,7 @@ button {
     width: 100%;
     float: left;
     font-size: 40px;
-    color: #f5c729;
+    color: #FF9008;
     font-weight: bold;
     text-align: center;
 }
@@ -1060,7 +1229,7 @@ textarea#comment.massage-bt::placeholder {
 .copyright_section {
     width: 100%;
     float: left;
-    background-color: #252f2d;
+    background-color: #00132b;
     height: auto;
 }
 
@@ -1078,7 +1247,7 @@ textarea#comment.massage-bt::placeholder {
 }
 
 .copyright_text a:hover {
-    color: #f5c729;
+    color: #FF9008;
 }
 
 

@@ -55,6 +55,121 @@
          width: 100%;
          height: auto;
       }
+
+/* === LIGHTBOX === */
+.lightbox {
+   display: none;
+   position: fixed;
+   z-index: 9999;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0,0,0,0.85);
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+   display: flex;
+   opacity: 1;
+}
+
+/* Imagen ampliada */
+/* Imagen ampliada */
+.lightbox-content {
+   max-width: 90%;
+   max-height: 90%;
+   border-radius: 10px;
+   box-shadow: 0 0 20px rgba(0,0,0,0.6);
+   opacity: 0;
+   transition: transform 0.2s ease, opacity 0.3s ease;
+   z-index: 10001;
+   cursor: zoom-in; /* Lupa cuando no hay zoom */
+   transform: translate(0, 0) scale(1);
+}
+
+.lightbox.show .lightbox-content {
+   opacity: 1;
+}
+
+/* Cuando hay zoom activado */
+.lightbox-content.zoomed {
+   cursor: grab;
+}
+
+/* Mientras arrastras */
+.lightbox-content.zoomed.dragging {
+   cursor: grabbing;
+}
+
+
+
+/* Botón cerrar (X) */
+.lightbox-close {
+   position: absolute;
+   top: 20px;
+   right: 40px;
+   font-size: 50px;
+   font-weight: bold;
+   color: #fff;
+   cursor: pointer;
+   z-index: 10002;
+}
+
+/* Flechas navegación */
+.lightbox-arrow {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 50px;
+   color: #fff;
+   cursor: pointer;
+   padding: 10px 15px;
+   z-index: 10002;
+   user-select: none;
+}
+
+.see-more-btn {
+   text-align: center;
+   margin-top: 20px;
+
+   /* NUEVO para alinear en fila */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px; /* separación entre botones */
+}
+
+/* Botones de tienda (enlaces con imagen) */
+.store-btn img {
+   height: 40px;        /* ajusta el tamaño del badge */
+   width: auto;
+   display: block;
+   transition: transform 0.2s ease;
+}
+
+.store-btn img:hover {
+   transform: scale(1.05);
+}
+
+
+.lightbox-prev {
+   left: 40px;
+}
+
+.lightbox-next {
+   right: 40px;
+}
+
+.lightbox-arrow:hover,
+.lightbox-close:hover {
+   color: #f5c729;
+}
+
+
       .cncapp-text {
          width: 55%;
          padding-left: 20px;
@@ -94,7 +209,7 @@
       }
 
       .see-more-btn button {
-         background-color: #f8cb29f7; /* Color amarillo */
+         background-color: #FF9008; /* Color amarillo */
          color: white;
          border: none;
          padding: 10px 20px;
@@ -106,7 +221,7 @@
       }
 
       .see-more-btn button:hover {
-         background-color: #e5b223; /* Cambia el color al pasar el ratón */
+         background-color: #FF5F00; /* Cambia el color al pasar el ratón */
       }
 
       /* Estilos para la sección desplegable */
@@ -171,7 +286,7 @@
          <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
          <div class="cncapp-container">
             <div class="cncapp-image">
-               <img src="images/CNCApp_Screen1.png" alt="CNCApp Screen 1">
+               <img src="images/CNCApp_Screen1.png"class="zoomable"  alt="CNCApp Screen 1">
                <p class="cncapp-byline">By Adrián Martín | July, 2024 - Until today</p>
             </div>
             <div class="cncapp-text">
@@ -194,24 +309,133 @@
                </div>
                <!-- Botón "See more" -->
                <div class="see-more-btn">
-                  <button id="seeMoreBtnCNCApp">See more</button>
-               </div>
+   <!-- Botón See more -->
+   <button id="seeMoreBtnCNCApp">See more</button>
+
+   <!-- Botón Google Play -->
+   <a href="https://play.google.com/store/apps/details?id=com.cncornellaapp.flutterbase" 
+      target="_blank" 
+      class="store-btn">
+      <img src="images/GooglePlay.png">
+   </a>
+
+   <!-- Botón App Store -->
+   <a href="https://apps.apple.com/es/app/cn-cornellà/id6737766358?l=ca" 
+      target="_blank" 
+      class="store-btn">
+      <img src="images/AppStore.png">
+   </a>
+</div>
+
             </div>
          </div>
 
          <!-- Contenido extra que se desplegará al hacer clic -->
          <div class="extra-content" id="extraContentCNCApp">
-            <img src="images/CNCApp Portfolio.png" alt="Extra Image 1">
-            <img src="images/CNCApp Portfolio2.png" alt="Extra Image 2">
-         </div>
+            <h1 class="portfolio_subtitle">Release version</h1><br><br>
+           <img src="images/CNCApp Portfolio.png" alt="Extra Image 1" style="width: 85%; height: auto;" class="zoomable">
+<img src="images/CNCApp Portfolio2.png" alt="Extra Image 2" style="width: 85%; height: auto;" class="zoomable">
+<br><br>
+            <h1 class="portfolio_subtitle">2.0 Update</h1>
+<p class="intro-text">
+  One year after the app's launch, update 2.0 was released, focusing on enhancing the user experience (UX) and improving the visual and functional quality of the interface (UI). Thanks to user feedback and the experience gained in this field, we can highlight some of the improvements:
+<br><br></p>
 
+<ul class="update-details">
+  <li><span class="bold">Complete redesign of the visual architecture,</span> applying design principles, clear typographic hierarchy and a more accessible colour scheme consistent with the club's identity.</li>
+
+  <li><span class="bold">Optimisation of navigation flows,</span> reducing unnecessary steps and applying more intuitive interaction patterns based on Nielsen heuristics.</li>
+
+  <li><span class="bold">Improvements in accessibility</span>, including greater contrast, enlargement of tactile areas, and incorporation of micro-interactions that facilitate understanding of the interface.</li>
+
+  <li><span class="bold">Implementation of a more responsive and adaptive design,</span> ensuring a smooth experience across different resolutions for both Android and iOS devices.</li>
+
+  <li><span class="bold">Complete review of the information architecture,</span> reorganising key content (competitions, results, PDF documents, club links, etc.) to facilitate the location and prioritisation of information.</li>
+
+  <li><span class="bold">Optimisation of perceived performance,</span> reducing loading times to minimise the feeling of waiting.</li>
+
+  <li><span class="bold">Refined iconography and interactive elements,</span> using consistent, scalable components aligned with Human Interface Design guidelines.</li>
+</ul><br><br>
+<h1 class="portfolio_subtitle">Improvements</h1><br><br>
+<img src="images/CNCApp Portfolio5.png" alt="Extra Image 3" style="width: 85%; height: auto;" class="zoomable">
+<img src="images/Team Screens.png" alt="Extra Image 4" style="width: 85%; height: auto;" class="zoomable">
+<img src="images/Calendar.png" alt="Extra Image 5" style="width: 85%; height: auto;" class="zoomable">
+<img src="images/CNCApp Portfolio6.png" alt="Extra Image 6" style="width: 85%; height: auto;" class="zoomable">
+
+
+        </div>
          <br>
          <br>
+
+<div class="container">
+         <br>
+         <br>
+         <h1 class="portfolio_taital">VITTO <span class="portfolio_taital_1">APP</span></h1>
+         <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
+         <div class="cncapp-container">
+            <div class="cncapp-image">
+               <img src="images/App Logo.png"class="zoomable" alt="VITTO APP" class="zoomable">
+               <p class="cncapp-byline">By Adrián Martín | September, 2024 - September, 2025</p>
+            </div>
+            <div class="cncapp-text">
+               <p class="cncapp-extra-text">Is it possible to acquire good habits by using new technologies?</p>
+               <p>
+                 This final degree project addresses an issue that affects a high percentage of children in Catalonia, Spain and around the world, with negative consequences on both a physical and psychological level. This condition is linked to a sedentary lifestyle, poor diet and socio-economic factors. That is why innovative solutions are needed to promote healthy habits from an early age. This project proposes the design of the user experience (UX) and user interface (UI) of a gamified application aimed at children between the ages of 7 and 10.
+
+<br><br>The main objective is to create an interactive prototype that motivates children to incorporate physical activity and balanced eating routines through video game mechanics. Specific objectives include establishing a UX strategy tailored to children's motivation, developing game mechanics such as rewards, levels and avatar customisation, and designing clear, accessible and secure interfaces that are easy for the target audience to understand and use. In addition, the aim is to involve families and legal guardians through parental control and monitoring functions.</p>
+               <p class="technical-data-text"><strong>Working hours:</strong> +400h</p>
+               <p class="technical-data-text"><strong>My work:</strong> Research work, low, medium and high fidelity wireframe design. Prototyping, user personas, time management and testing phase implementation.
+ </p>
+               <p class="technical-data-text"><strong>Software used:</strong> </p>
+
+               <!-- Aquí está la fila de imágenes -->
+               <div class="software-images">
+                  <img src="images/Figma.png" alt="Figma" title="Figma">
+                  <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
+                  <img src="images/Drive.png" alt="Google Drive" title="Google Drive">
+                  <img src="images/Forms.png" alt="Google Forms" title="Google Forms">
+               </div>
+               <!-- Botón "See more" -->
+               <div class="see-more-btn">
+                  <button id="seeMoreBtnVitto">See more</button>
+               </div>
+            </div>
+            
+
+            
+         </div>
+         <div class="extra-content" id="extraContentVitto">
+  <!-- GRID DE 3 FILAS x 2 COLUMNAS -->
+<div class="vitto-grid">
+   <div><img src="images/Start Screens.png"class="zoomable" alt=""></div>
+   <div><img src="images/Main Screens.png"class="zoomable" alt=""></div>
+   <div><img src="images/Tip Screens.png"class="zoomable" alt=""></div>
+   <div><img src="images/Doctor Screens.png"class="zoomable" alt=""></div>
+   <div><img src="images/Settings Screen.png"class="zoomable" alt=""></div>
+   <div><img src="images/Forms Screen.png"class="zoomable"alt=""></div>
+   
+</div>
+<div><img src="images/Scan Screens.png"class="zoomable"style="width:75%; height:auto;"></div>
+<br><br>
+
+<p>You can find all the UX/UI methods, processes, and strategies by clicking the button below! </p>
+   <div class="download-btn">
+  <a href="images/TFG.pdf" download class="download-btn">
+  Download the project!
+</a>
+</div>
+<br><br><br><br>
+</div>
+
+         
+
+        
+
          <h1 class="portfolio_taital">TALKATIVE <span class="portfolio_taital_1">ADVENTURE</span></h1>
          <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
          <div class="cncapp-container">
             <div class="cncapp-image">
-               <img src="images/Talkative_Screen1.png" alt="Talkative Adventure Screen 1">
+               <img src="images/Talkative_Screen1.png"class="zoomable" alt="Talkative Adventure Screen 1">
                <p class="cncapp-byline">By Adrián Martín | November, 2022 - January, 2022</p>
             </div>
             <div class="cncapp-text">
@@ -239,15 +463,15 @@
 
          <!-- Contenido extra que se desplegará al hacer clic -->
          <div class="extra-content" id="extraContentTalkative">
-            <img src="images/Talkative Adventure Portfolio.png" alt="Extra Image 1">
-            <img src="images/Talkative Adventure Portfolio2.jpg" alt="Extra Image 2">
+            <img src="images/Talkative Adventure Portfolio.png"class="zoomable" alt="Extra Image 1">
+            <img src="images/Talkative Adventure Portfolio2.jpg" class="zoomable"alt="Extra Image 2">
          </div>
 
          <h1 class="portfolio_taital">MY <span class="portfolio_taital_1">PORTFOLIO</span></h1>
          <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
          <div class="cncapp-container">
             <div class="cncapp-image">
-               <img src="images/MyPortfolio.jpg" alt="Home Page screenshot">
+               <img src="images/MyPortfolio.jpg"class="zoomable" alt="Home Page screenshot">
                <p class="cncapp-byline">By Adrián Martín | September, 2024 - Until today</p>
             </div>
             <div class="cncapp-text">
@@ -275,7 +499,7 @@
          <!-- Contenedor con imagen a la izquierda y texto a la derecha -->
          <div class="cncapp-container">
             <div class="cncapp-image">
-               <img src="images/Home_Page.jpg" alt="Home Page screenshot">
+               <img src="images/Home_Page.jpg"class="zoomable" alt="Home Page screenshot">
                <p class="cncapp-byline">By Adrián Martín | September, 2024 - Until today</p>
             </div>
             <div class="cncapp-text">
@@ -293,15 +517,20 @@
                   <img src="images/Photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop">
                   <img src="images/Visual.png" alt="Visual Studio" title="Visual Studio">
                </div>
+                <div class="see-more-btn">
+            <button id="seeMoreBtnCNCApp" onclick="window.open('https://cncornella.com/', '_blank');">Web Page</button>
+        </div>
             </div>
          </div>
+         <!-- Botón "See more" -->
+        
          <br>
          <br>
          
          <!-- Contenido extra que se desplegará al hacer clic -->
          <div class="extra-content" id="extraContentTalkative">
-            <img src="images/Talkative Adventure Portfolio.png" alt="Extra Image 1">
-            <img src="images/Talkative Adventure Portfolio2.png" alt="Extra Image 2">
+            <img src="images/Talkative Adventure Portfolio.png" class="zoomable"alt="Extra Image 1">
+            <img src="images/Talkative Adventure Portfolio2.png"class="zoomable" alt="Extra Image 2">
          </div>
 
       </div>
@@ -350,7 +579,207 @@
             this.textContent = "See more";
          }
       });
+
+      document.getElementById("seeMoreBtnVitto").addEventListener("click", function() {
+    var extraContentVitto = document.getElementById("extraContentVitto");
+    if (extraContentVitto.style.display === "none" || extraContentVitto.style.display === "") {
+        extraContentVitto.style.display = "block";
+        this.textContent = "See less";
+    } else {
+        extraContentVitto.style.display = "none";
+        this.textContent = "See more";
+    }
+});
+
    </script>
+
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+   // SOLO las imágenes que tengan la clase "zoomable"
+   const galleryImages = document.querySelectorAll('.ux_content_section img.zoomable');
+   const lightbox = document.getElementById('lightbox');
+   const lightboxImg = document.getElementById('lightboxImg');
+   const closeBtn = document.getElementById('closeLightbox');
+
+   let currentIndex = 0;
+
+   // 👇 Variables para zoom y desplazamiento
+   let isZoomed = false;
+   let scale = 2;            // Nivel de zoom (prueba con 1.8, 2.5, etc.)
+   let translateX = 0;
+   let translateY = 0;
+
+   let isDragging = false;
+   let startX = 0;
+   let startY = 0;
+   let startTranslateX = 0;
+   let startTranslateY = 0;
+
+   function applyTransform() {
+      if (isZoomed) {
+         lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      } else {
+         lightboxImg.style.transform = 'translate(0px, 0px) scale(1)';
+      }
+   }
+
+   function openLightbox(index) {
+      currentIndex = index;
+      const img = galleryImages[currentIndex];
+
+      // Reset zoom y posición cada vez que se abre
+      isZoomed = false;
+      translateX = 0;
+      translateY = 0;
+      lightboxImg.classList.remove('zoomed', 'dragging');
+      applyTransform();
+
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+      void lightbox.offsetWidth; // forzar reflow
+      lightbox.classList.add('show');
+   }
+
+   function closeLightbox() {
+      lightbox.classList.remove('show');
+      isZoomed = false;
+      translateX = 0;
+      translateY = 0;
+      lightboxImg.classList.remove('zoomed', 'dragging');
+      applyTransform();
+
+      setTimeout(() => {
+         lightbox.style.display = 'none';
+      }, 300);
+   }
+
+   // Click en las miniaturas → abrir lightbox
+   galleryImages.forEach((img, index) => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function () {
+         openLightbox(index);
+      });
+   });
+
+   // Click en la imagen ampliada → toggle zoom
+   lightboxImg.addEventListener('click', function (e) {
+      e.stopPropagation(); // para que no cierre el lightbox
+      isZoomed = !isZoomed;
+
+      if (isZoomed) {
+         translateX = 0;
+         translateY = 0;
+         lightboxImg.classList.add('zoomed');
+      } else {
+         translateX = 0;
+         translateY = 0;
+         lightboxImg.classList.remove('zoomed', 'dragging');
+      }
+
+      applyTransform();
+   });
+
+   // 🖱️ Drag con ratón cuando hay zoom
+   lightboxImg.addEventListener('mousedown', function (e) {
+      if (!isZoomed) return;
+
+      isDragging = true;
+      lightboxImg.classList.add('dragging');
+
+      startX = e.clientX;
+      startY = e.clientY;
+      startTranslateX = translateX;
+      startTranslateY = translateY;
+   });
+
+   window.addEventListener('mousemove', function (e) {
+      if (!isDragging) return;
+
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+
+      translateX = startTranslateX + dx;
+      translateY = startTranslateY + dy;
+
+      applyTransform();
+   });
+
+   window.addEventListener('mouseup', function () {
+      if (!isDragging) return;
+      isDragging = false;
+      lightboxImg.classList.remove('dragging');
+   });
+
+   // 📱 Soporte táctil básico
+   lightboxImg.addEventListener('touchstart', function (e) {
+      if (!isZoomed) return;
+      if (e.touches.length !== 1) return; // solo un dedo
+
+      isDragging = true;
+      lightboxImg.classList.add('dragging');
+
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      startTranslateX = translateX;
+      startTranslateY = translateY;
+   }, { passive: true });
+
+   lightboxImg.addEventListener('touchmove', function (e) {
+      if (!isDragging) return;
+      if (e.touches.length !== 1) return;
+
+      const touch = e.touches[0];
+      const dx = touch.clientX - startX;
+      const dy = touch.clientY - startY;
+
+      translateX = startTranslateX + dx;
+      translateY = startTranslateY + dy;
+
+      applyTransform();
+   }, { passive: true });
+
+   lightboxImg.addEventListener('touchend', function () {
+      if (!isDragging) return;
+      isDragging = false;
+      lightboxImg.classList.remove('dragging');
+   });
+
+   // Cerrar con la X
+   closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeLightbox();
+   });
+
+   // Cerrar clicando fuera de la imagen
+   lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) {
+         closeLightbox();
+      }
+   });
+
+   // Teclado: ESC (cerrar)
+   window.addEventListener('keydown', function (e) {
+      if (lightbox.classList.contains('show')) {
+         if (e.key === 'Escape') {
+            closeLightbox();
+         }
+      }
+   });
+
+});
+
+
+</script>
+
+
+   
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+   <span id="closeLightbox" class="lightbox-close">&times;</span>
+   <img id="lightboxImg" class="lightbox-content">
+</div>
 
 </body>
 </html>
